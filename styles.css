@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-body: #0F1B2A;
+    --background-color-bouton: #144680;
+    --background-color-bouton-hover: #D0E8FF;
+    --blanc-cassé: #F5F9FC;
+    --background-color-card: #1E2A38;
+
+    --font-weight-bouton: 500;
+    --font-size-bouton: 18px;
+    --font-weight-p: 400;
+    --font-size-p: 16px;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* <---------- Police d'écriture ----------> */
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--color-body);
+    color: var(--background-color-bouton-hover);
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 26px;
+}
+
+h4 {
+    font-weight: 500;
+}
+
+button {
+    font-weight: var(--font-weight-bouton);
+    font-size: var(--font-size-bouton);
+}
+
+p {
+    font-weight: var(--font-weight-p);
+    font-size: var(--font-size-p);
+    color: var(--blanc-cassé);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* <---------- HEADER ----------> */
+
+header {
+    height: 100vh;
+    padding-top: 1rem;
+    background-image: url(Images/image_portfolio2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.liste_ancre {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.ancre_nav {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--background-color-bouton-hover);
+    background-color: var(--background-color-bouton);
+    font-weight: var(--font-weight-bouton);
+    font-size: var(--font-size-bouton);
+    padding: 1rem;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: background 0.3s;
+
+}
+
+.ancre_nav:hover {
+    color: var(--background-color-bouton);
+    background-color: var(--background-color-bouton-hover);
+    border: 2px solid var(--background-color-bouton);
+}
+
+.presentation-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    pointer-events: none;  /*Ce bloc couvre ma barre nav et cela va servir à laisser passer les clics*/
+}
+
+header h1 {
+    text-decoration: underline;
+    margin-bottom: 2rem;
+}
+
+.important {
+    font-size: 1.5em;
+    color: var(--background-color-bouton-hover)
+}
+
+#navigationSimple {
+    width: 30%;
+    height: 10%;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--background-color-bouton);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.navigationVisible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#navigationSimple .liste_ancre {
+    height: 100%;
+    gap: 0;
+}
+
+#navigationSimple .liste_ancre li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navigationSimple .ancre_nav {
+    background-color: transparent;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navigationSimple .ancre_nav:hover {
+    background-color: var(--background-color-bouton-hover);
+}
+
+
+/* <---------- MAIN ----------> */
+/* <---------- A PROPOS ----------> */
+
+#profil {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+#profil > div {
+    align-content: center;
+    width: 50%;
+}
+
+#profil p {
+    margin: 2rem 0;
+}
+
+#profil img {
+    margin: 4rem 0;
+    border-radius: 10px;
+}
+
+
+.CTA {
+    color: var(--background-color-bouton-hover);
+    background-color: var(--background-color-bouton);
+    border: 2px solid transparent;
+}
+
+.CTA:hover {
+    background-color: var(--background-color-bouton-hover);
+    color: var(--background-color-bouton);
+    border: 2px solid var(--background-color-bouton);
+}
+
+.CTA2 {
+    background-color: transparent;
+    color: var(--background-color-bouton-hover);
+    border: 2px solid var(--background-color-bouton-hover);
+}
+
+
+/* <---------- COMPETENCES / PARCOURS ----------> */
+
+#competences, #parcours, #projets, #contacter {
+    padding: 1rem 0 4rem 0;
+}
+
+#competences h2, #parcours h2, #projets h2, .formulaire h2, #contacter h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#competences > div, #parcours > div, #projets > div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#competences h4 {
+    margin: 0.5rem 0;
+}
+
+.fond_bloc {
+    text-align: center;
+    width: 40%;
+    background-color: var(--background-color-card);
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.container > .card {
+    width: 30%;
+    padding: 1rem;
+    border: 1px solid var(--background-color-bouton-hover);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container img {
+    width: 70%;
+}
+
+#parcours .niveauT {
+    margin-bottom: 1rem;
+}
+
+.niveauT {
+    font-size: 14px;
+}
+
+.niveauD {
+    font-size: 12px;
+}
+
+
+/* <---------- PARCOURS ----------> */
+
+#parcours .card {
+    width: 45%;
+}
+
+#parcours .card h4 {
+    margin-bottom: 2rem;
+}
+
+
+/* <---------- PROJETS ----------> */
+
+.cardProjet {
+    text-align: center;
+    width: 25%;
+    box-shadow: 0 0 10px var(--background-color-bouton-hover);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardProjet div {
+    flex: 1;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardProjet img {
+    width: 100%;
+    height: 7rem;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid var(--background-color-bouton-hover);
+    object-fit: cover;
+}
+
+.cardProjet h4 {
+    color: var(--blanc-cassé);
+}
+
+.cardProjet p {
+    font-size: 14px;
+    padding: 1rem 0;
+}
+
+.cardProjet a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--background-color-bouton-hover);
+}
+
+
+/* <---------- CONTACTER ----------> */
+
+.formulaire {
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+form {
+    width: 40%;
+    background-color: var(--background-color-card);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.moyenContact {
+    width: 40%;
+    background-color: var(--background-color-card);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.moyenContact a {
+    color: var(--background-color-bouton-hover);
+}
+
+.blocContact {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid var(--background-color-bouton-hover);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.contactScale {
+    transition: scale 0.3s;
+}
+
+.contactScale:hover {
+    scale: 1.02;
+}
+
+.lienEx {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lienEx a {
+    display: flex;
+}
+
+.formContact {
+    position: relative;
+}
+
+.formContact label {
+    position: absolute;
+    top: -0.6rem;
+    left: 5rem;
+    background-color: var(--background-color-card);
+    padding: 0 3px;
+}
+
+.formContact input, .formContact textarea {
+    width: 80%;
+    background-color: transparent;
+    border: 2px solid var(--background-color-bouton-hover);
+    padding: 1.3rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: var(--blanc-cassé);
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.formulaire button {
+    width: 30%;
+    margin: auto;
+    padding: 1rem;
+}
+
+.formulaire a#envoyer {
+    width: 30%;
+    margin: auto;
+    padding: 1rem;
+    font-weight: var(--font-weight-bouton);
+    font-size: var(--font-size-bouton);
+}
+
+
+/* <---------- FOOTER ----------> */
+
+footer {
+    background-color: #BFD7FF;
+    height: 50vh;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+footer p, footer h2 {
+    color: var(--background-color-bouton);
+    padding: 1rem 0;
+}
+
+
+/* <---------- MEDIA QUERIES ----------> */
+
+@media screen and (max-width: 430px) {
+
+/* <---------- HEADER ----------> */
+
+    #navigation {
+        display: none;
+    }
+
+    #navigationSimple {
+        width: 80%;
+        height: 7%;
+        left: 50%;
+        transform: translateX(-50%); /*Permet de re-décaler mon élément à -50% de ça propre largeur*/
+    }
+
+
+/* <---------- PROFIL ----------> */
+
+    #profil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        height: auto;
+        padding: 2rem;
+    }
+
+    #profil img {
+        padding: 0;
+        width: 50%;
+    }
+
+    #profil div {
+        width: 100%;
+    }
+
+
+/* <---------- COMPETENCES / PARCOURS / PROJETS / CONTACTER----------> */
+
+    #competences, #parcours, #projets, #contacter {
+        padding: 2rem;
+    }
+
+    #competences > div, #parcours > div, #projets > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fond_bloc {
+        width: 100%;
+    }
+
+    .container > .card {
+        width: 45%;
+    }
+
+    #competences h4 {
+        margin: 10px 0;
+    }
+
+    .niveauT {
+        font-size: 12px;
+        margin-top: 0;
+    }
+
+    .cardProjet {
+        width: 100%;
+    }
+
+    .formulaire {
+        width: 100%;
+        flex-direction: column;
+        gap: 4rem;
+        padding: 0;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .moyenContact {
+        width: 100%;
+    }
+
+    .formContact input, .formContact textarea {
+        width: 100%;
+    }
+
+    .formContact label {
+        left: 2rem;
+    }
+
+    .formulaire button {
+        width: 40%;
+    
+    }
+
+    .formulaire a#envoyer {
+        width: 40%;
+    }
+
+
+/* <---------- FOOTER  ----------> */
+
+    footer {
+        height: 25vh;
+        padding: 0;
+    }
+}
